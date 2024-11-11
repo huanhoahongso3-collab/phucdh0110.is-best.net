@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>K7A2 Project - Login</title>
     <style>
-        body {
+      body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -84,6 +84,57 @@
 .menu a:hover {
     background-color: #e0e0e0;
     color: #007bff;
+}
+
+/* Form Section */
+.form-container {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    padding: 30px;
+    margin: 100px auto;
+    max-width: 400px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+form {
+    margin: 0;
+}
+
+label {
+    display: block;
+    margin-bottom: 15px;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 1em;
+}
+
+button {
+    padding: 12px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+    font-size: 1em;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
 }
 
 /* About Section */
@@ -220,6 +271,47 @@
         margin: 20px;
         padding: 20px;
     }
+}
+
+@media (max-width: 600px) {
+    .form-container {
+        margin: 30px auto;
+        padding: 20px;
+        max-width: 90%;
+    }
+
+    .menu {
+        padding: 5px;
+    }
+
+    .menu a {
+        padding: 8px;
+        min-width: 80px;
+        text-align: center;
+    }
+
+    .image-gallery img {
+        max-width: calc(50% - 20px); /* 2 images per row on mobile */
+    }
+}
+
+/* Image Gallery */
+.image-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px auto;
+    padding: 0 10px;
+    max-width: 1200px;
+    z-index: 3;
+    position: relative;
+}
+
+.image-gallery img {
+    margin: 10px;
+    max-width: calc(25% - 20px); /* 4 images per row */
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
     </style>
