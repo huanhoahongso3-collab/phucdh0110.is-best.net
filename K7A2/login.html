@@ -5,386 +5,223 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>K7A2 Project - Login</title>
     <style>
-         body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            color: white;
-            background-color: #000;
-        }
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: white;
+    background-color: #000;
+}
 
-        /* Background Layer */
-        .background-layer {
-            background-image: url('http://phucdh0110.localplayer.dev/assets/background.jpg');
-            background-size: cover;
-            background-position: center;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -2; /* Ensure background is behind everything */
-        }
+/* Background Layer */
+.background-layer {
+    background-image: url('http://phucdh0110.localplayer.dev/assets/background.jpg');
+    background-size: cover;
+    background-position: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2; /* Ensure background is behind everything */
+}
 
-        /* Overlay Layer */
-        .background-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8); /* Black overlay */
-            z-index: -1; /* Ensure overlay stays behind content */
-        }
+/* Overlay Layer */
+.background-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Black overlay */
+    z-index: -1; /* Ensure overlay stays behind content */
+}
 
-        /* Menu Style */
-        .menu {
-            background: white;
-            padding: 15px 0;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            position: relative;
-            z-index: 10; /* Ensure menu is on top */
-            border-radius: 20px;
-            margin: 10px;
-        }
+/* Menu Style */
+.menu {
+    background: white;
+    padding: 15px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 10; /* Ensure menu is on top */
+    border-radius: 20px;
+    margin: 10px;
+}
 
-        .menu ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
+.menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
 
-        .menu li {
-            margin: 0 10px;
-        }
+.menu li {
+    margin: 0 10px;
+}
 
-        .menu a {
-            text-decoration: none;
-            color: #333;
-            padding: 12px 20px;
-            border-radius: 25px;
-            transition: background-color 0.3s, color 0.3s;
-            font-weight: bold;
-            background: #f9f9f9;
-            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+.menu a {
+    text-decoration: none;
+    color: #333;
+    padding: 12px 20px;
+    border-radius: 25px;
+    transition: background-color 0.3s, color 0.3s;
+    font-weight: bold;
+    background: #f9f9f9;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-        .menu a img {
-            margin-right: 8px;
-            width: 20px;
-            height: 20px;
-        }
+.menu a img {
+    margin-right: 8px;
+    width: 20px;
+    height: 20px;
+}
 
-        .menu a:hover {
-            background-color: #e0e0e0;
-            color: #007bff;
-        }
+.menu a:hover {
+    background-color: #e0e0e0;
+    color: #007bff;
+}
 
-        /* About Section */
-        .about-section {
-            position: relative;
-            z-index: 10;
-            margin: 50px auto;
-            max-width: 700px;
-            background: rgba(0, 0, 0, 0.7);
-            border-radius: 15px;
-            padding: 30px;
-            text-align: center;
-        }
+/* About Section */
+.about-section {
+    position: relative;
+    z-index: 10;
+    margin: 50px auto;
+    max-width: 700px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+}
 
-        .about-info h2 {
-            font-size: 28px;
-            margin-bottom: 15px;
-        }
+.about-info h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
 
-        .about-info p {
-            font-size: 18px;
-            margin: 10px 0;
-        }
+.about-info p {
+    font-size: 18px;
+    margin: 10px 0;
+}
 
-        .about-images {
-            display: flex;
-            justify-content: space-around;
-            margin-top: 30px;
-        }
+.about-images {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+}
 
-        .about-images img {
-            width: 120px;
-            height: auto;
-            border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-        }
+.about-images img {
+    width: 120px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
 
-        /* Project Section */
-        .project-section {
-            background-color: rgba(86, 77, 114, 0.8); /* Set 80% opacity */
-            padding: 40px 20px;
-            border-radius: 15px;
-            margin-top: 50px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            z-index: 10;
-        }
+/* Project Section */
+.project-section {
+    background-color: rgba(86, 77, 114, 0.8); /* 80% opacity */
+    padding: 40px 20px;
+    border-radius: 15px;
+    margin-top: 50px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
 
-        .project-section h2 {
-            font-size: 28px;
-            margin-bottom: 20px;
-            text-align: center;
-            color: white;
-        }
+.project-section h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: white;
+}
 
-        .project-section p {
-            font-size: 18px;
-            color: #ffffff;
-            text-align: center;
-            margin-bottom: 30px;
-        }
+.project-section p {
+    font-size: 18px;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 30px;
+}
 
-        .project-container {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-        }
+.project-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
 
-        .project-card {
-            width: 30%;
-            padding: 1px;
-            background-color: #333;
-            border-radius: 15px;
-            margin: 5px;
-            text-align: center;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease-in-out;
-        }
+.project-card {
+    width: 30%;
+    padding: 1px;
+    background-color: #333;
+    border-radius: 15px;
+    margin: 5px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
 
-        .project-card img {
-            width: 100%;
-            border-radius: 12px;
-        }
+.project-card img {
+    width: 100%;
+    border-radius: 12px;
+}
 
-        .project-card:hover {
-            transform: scale(1.05);
-        }
+.project-card:hover {
+    transform: scale(1.05);
+}
 
-        .project-card h3 {
-            color: white;
-            font-size: 22px;
-            margin-top: 10px;
-            word-wrap: break-word; /* Allows long words to break */
-            word-break: break-word; /* Ensures text breaks when needed */
-        }
+.project-card h3 {
+    color: white;
+    font-size: 22px;
+    margin-top: 10px;
+    word-wrap: break-word; /* Allows long words to break */
+    word-break: break-word; /* Ensures text breaks when needed */
+}
 
-        .project-card .button {
-            margin-top: 10px;
-            padding: 12px 20px;
-            background-color: #007bff;
-            color: white;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: background-color 0.3s;
-        }
+.project-card .button {
+    margin-top: 10px;
+    padding: 12px 20px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
 
-        .project-card .button:hover {
-            background-color: #0056b3;
-        }
+.project-card .button:hover {
+    background-color: #0056b3;
+}
 
-        /* Responsive Styles */
-        @media (max-width: 768px) {
-            .menu {
-                padding: 10px;
-            }
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .menu {
+        padding: 10px;
+    }
 
-            .menu ul {
-                flex-direction: column;
-            }
+    .menu ul {
+        flex-direction: column;
+    }
 
-            .about-images {
-                flex-direction: column;
-            }
+    .about-images {
+        flex-direction: column;
+    }
 
-            .project-container {
-                flex-direction: column;
-            }
+    .project-container {
+        flex-direction: column;
+    }
 
-            .project-card {
-                width: 100%;
-            }
+    .project-card {
+        width: 100%;
+    }
 
-            .about-section {
-                margin: 20px;
-                padding: 20px;
-            }
-        
+    .about-section {
+        margin: 20px;
+        padding: 20px;
+    }
+}
 
-
-        /* Background Layer */
-        .background-layer {
-            background-image: url('http://phucdh0110.localplayer.dev/assets/background.jpg');
-            background-size: cover;
-            background-position: center;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-        }
-
-        .background-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.9);
-            z-index: 2;
-        }
-
-        .form-container {
-            position: relative;
-            z-index: 3;
-            text-align: center;
-            padding: 30px;
-            margin: 100px auto;
-            max-width: 400px;
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 15px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-        }
-
-        form {
-            margin: 0;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 15px;
-            font-weight: bold;
-            font-size: 1.1em;
-        }
-
-        input[type="text"] {
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 20px;
-            border: 2px solid #ccc;
-            border-radius: 5px;
-            box-sizing: border-box;
-            font-size: 1em;
-        }
-
-        button {
-            padding: 12px 20px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: bold;
-            width: 100%;
-            font-size: 1em;
-            transition: background-color 0.3s;
-        }
-
-        button:hover {
-            background-color: #0056b3;
-        }
-
-        .menu {
-            background: white;
-            padding: 10px 0;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            position: relative;
-            z-index: 10;
-            border-radius: 20px;
-            margin-top: 20px;
-        }
-
-        .menu ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-        }
-
-        .menu li {
-            margin: 0 10px;
-            flex: 1;
-        }
-
-        .menu a {
-            text-decoration: none;
-            color: #333;
-            padding: 10px 15px;
-            border-radius: 20px;
-            transition: background-color 0.3s, color 0.3s;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #f9f9f9;
-            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
-            white-space: nowrap;
-        }
-
-        .menu a img {
-            margin-right: 8px;
-            width: 20px;
-            height: 20px;
-        }
-
-        .menu a:hover {
-            background-color: #e0e0e0;
-            color: #007bff;
-        }
-
-        .image-gallery {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin: 20px auto;
-            padding: 0 10px;
-            max-width: 1200px;
-            z-index: 3;
-            position: relative;
-        }
-
-        .image-gallery img {
-            margin: 10px;
-            max-width: calc(25% - 20px); /* 4 images per row */
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        @media (max-width: 600px) {
-            .form-container {
-                margin: 30px auto;
-                padding: 20px;
-                max-width: 90%;
-            }
-
-            .menu {
-                padding: 5px;
-            }
-
-            .menu a {
-                padding: 8px;
-                min-width: 80px;
-                text-align: center;
-            }
-
-            .image-gallery img {
-                max-width: calc(50% - 20px); /* 2 images per row on mobile */
-            }
-        }
     </style>
 </head>
 <body>
