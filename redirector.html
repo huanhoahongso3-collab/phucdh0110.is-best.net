@@ -1,11 +1,11 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>URL Redirector</title>
     <style>
-         body {
+        body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
@@ -86,39 +86,105 @@
             color: #007bff;
         }
 
-        /* About Section */
-        .about-section {
-            position: relative;
+        /* Form Styles */
+        #redirectForm {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 15px;
+            margin: 20px auto; /* Center form */
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             z-index: 10;
-            margin: 50px auto;
-            max-width: 700px;
-            background: rgba(0, 0, 0, 0.7);
-            border-radius: 15px;
-            padding: 30px;
+            position: relative;
+            max-width: 400px; /* Reduced width */
+        }
+
+        #redirectForm label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            font-size: 1.1em; /* Increased font size for visibility */
+            text-align: center; /* Center the text */
+            color: black; /* Change text color to black */
+        }
+
+        #redirectForm input {
+            width: 95%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        #redirectForm button {
+            padding: 10px 15px;
+            margin-right: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #redirectForm button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Description Styles */
+        .description {
+            margin-top: 20px;
+            color: white; /* White text */
             text-align: center;
+            font-size: 1em; /* Default font size */
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.7); /* Semi-transparent background for contrast */
+            border-radius: 5px; /* Rounded corners */
+            max-width: 600px; /* Max width for better layout */
+            margin-left: auto;
+            margin-right: auto; /* Centering the description */
+            line-height: 1.5; /* Better line spacing */
+            position: relative; /* To ensure it sits correctly */
+            z-index: 10; /* Above the overlay */
         }
 
-        .about-info h2 {
-            font-size: 28px;
-            margin-bottom: 15px;
-        }
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .menu {
+                padding: 10px;
+            }
 
-        .about-info p {
-            font-size: 18px;
-            margin: 10px 0;
-        }
+            .menu ul {
+                flex-direction: column;
+            }
 
-        .about-images {
-            display: flex;
-            justify-content: space-around;
-            margin-top: 30px;
-        }
+            .about-images {
+                flex-direction: column;
+            }
 
-        .about-images img {
-            width: 120px;
-            height: auto;
-            border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            .project-container {
+                flex-direction: column;
+            }
+
+            .project-card {
+                width: 100%;
+            }
+
+            .about-section {
+                margin: 20px;
+                padding: 20px;
+            }
+
+            #redirectForm {
+                margin: 10px;
+                padding: 10px;
+                max-width: 90%; /* Responsive width */
+            }
+
+            .description {
+                padding: 10px;
+                font-size: 0.9em; /* Slightly smaller font size on mobile */
+            }
         }
 
         /* Project Section */
@@ -194,133 +260,51 @@
             background-color: #0056b3;
         }
 
-        /* Responsive Styles */
-        @media (max-width: 768px) {
-            .menu {
-                padding: 10px;
-            }
-
-            .menu ul {
-                flex-direction: column;
-            }
-
-            .about-images {
-                flex-direction: column;
-            }
-
-            .project-container {
-                flex-direction: column;
-            }
-
-            .project-card {
-                width: 100%;
-            }
-
-            .about-section {
-                margin: 20px;
-                padding: 20px;
-            }
-        
-
-
-        /* Form Styles */
-        #redirectForm {
-            background: rgba(255, 255, 255, 0.9);
-            padding: 15px;
-            margin: 20px auto; /* Center form */
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            z-index: 10;
+        /* About Section */
+        .about-section {
             position: relative;
-            max-width: 400px; /* Reduced width */
-        }
-
-        #redirectForm label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: bold;
-            font-size: 1.1em; /* Increased font size for visibility */
-        }
-
-        #redirectForm input {
-            width: 95%;
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 1em;
-        }
-
-        #redirectForm button {
-            padding: 10px 15px;
-            margin-right: 10px;
-            border: none;
-            border-radius: 5px;
-            background-color: #007bff;
-            color: white;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        #redirectForm button:hover {
-            background-color: #0056b3;
-        }
-
-        /* Description Styles */
-        .description {
-            margin-top: 20px;
-            color: white; /* White text */
+            z-index: 10;
+            margin: 50px auto;
+            max-width: 700px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 15px;
+            padding: 30px;
             text-align: center;
-            font-size: 1em; /* Default font size */
-            padding: 15px;
-            background: rgba(0, 0, 0, 0.7); /* Semi-transparent background for contrast */
-            border-radius: 5px; /* Rounded corners */
-            max-width: 600px; /* Max width for better layout */
-            margin-left: auto;
-            margin-right: auto; /* Centering the description */
-            line-height: 1.5; /* Better line spacing */
-            position: relative; /* To ensure it sits correctly */
-            z-index: 10; /* Above the overlay */
         }
 
-        @media (max-width: 600px) {
-            .menu {
-                padding: 5px;
-            }
+        .about-info h2 {
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
 
-            .menu ul {
-                flex-direction: row;
-                overflow-x: auto;
-            }
+        .about-info p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
 
-            .menu li {
-                margin: 0 5px;
-            }
+        .about-images {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 30px;
+        }
 
-            .menu a {
-                padding: 8px;
-                min-width: 80px;
-                text-align: center;
-            }
-
-            #redirectForm {
-                margin: 10px;
-                padding: 10px;
-                max-width: 90%; /* Responsive width */
-            }
-
-            .description {
-                padding: 10px;
-                font-size: 0.9em; /* Slightly smaller font size on mobile */
-            }
+        .about-images img {
+            width: 120px;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
         }
     </style>
 </head>
 <body>
 
+<!-- Background Image -->
 <div class="background-layer"></div>
+
+<!-- Background Overlay -->
 <div class="background-overlay"></div>
 
+<!-- Menu -->
 <div class="menu">
     <ul class="wsite-menu-default">
         <li class="wsite-menu-item-wrap">
@@ -345,7 +329,6 @@
         </li>
     </ul>
 </div>
-
 <!-- Redirect Form -->
 <form id="redirectForm">
     <label for="input">Enter the website you want to redirect to</label>
