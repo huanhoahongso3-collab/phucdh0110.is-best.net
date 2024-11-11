@@ -8,157 +8,221 @@
         body {
             font-family: Arial, sans-serif;
             margin: 0;
-            padding: 0; /* Remove default padding */
-            color: white; /* Set text color for contrast */
+            padding: 0;
+            color: white;
+            background-color: #000;
         }
 
         /* Background Layer */
         .background-layer {
             background-image: url('http://phucdh0110.localplayer.dev/assets/background.jpg');
-            background-size: cover; /* Cover the entire background */
-            background-position: center; /* Center the background image */
-            position: fixed; /* Fix the layer in place */
+            background-size: cover;
+            background-position: center;
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: 1; /* Behind the menu */
+            z-index: -2; /* Ensure background is behind everything */
         }
 
+        /* Overlay Layer */
         .background-overlay {
-            position: fixed; /* Fix the overlay in place */
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.8); /* Black with 80% opacity (20% transparent) */
-            z-index: 2; /* Above the background image */
+            background-color: rgba(0, 0, 0, 0.8); /* Black overlay */
+            z-index: -1; /* Ensure overlay stays behind content */
         }
 
+        /* Menu Style */
         .menu {
-            background: white; /* White background for the menu */
-            padding: 10px 0; /* Padding for the menu */
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+            background: white;
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             position: relative;
             z-index: 10; /* Ensure menu is on top */
-            border-radius: 20px; /* Rounded corners for the menu */
+            border-radius: 20px;
+            margin: 10px;
         }
 
         .menu ul {
-            list-style: none; /* Remove bullet points */
+            list-style: none;
             padding: 0;
-            margin: 0; /* Remove default margin */
-            display: flex; /* Display items in a row */
-            justify-content: space-around; /* Space items evenly */
-            flex-wrap: wrap; /* Allow wrapping on small screens */
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
         }
 
         .menu li {
-            margin: 0 10px; /* Horizontal spacing between items */
-            flex: 1; /* Allow items to grow */
+            margin: 0 10px;
         }
 
         .menu a {
             text-decoration: none;
             color: #333;
-            padding: 10px 15px; /* Adjusted padding for clickable area */
-            border-radius: 20px; /* Rounded corners for each menu item */
+            padding: 12px 20px;
+            border-radius: 25px;
             transition: background-color 0.3s, color 0.3s;
-            font-weight: bold; /* Bold text for emphasis */
-            display: flex; /* Flexbox for icon and text */
-            align-items: center; /* Center align items */
-            justify-content: center; /* Center text and icon */
-            background: #f9f9f9; /* Light background for each item */
-            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-            white-space: nowrap; /* Prevent text wrapping */
+            font-weight: bold;
+            background: #f9f9f9;
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .menu a img {
-            margin-right: 8px; /* Space between icon and text */
-            width: 20px; /* Set icon width */
-            height: 20px; /* Set icon height */
+            margin-right: 8px;
+            width: 20px;
+            height: 20px;
         }
 
         .menu a:hover {
-            background-color: #e0e0e0; /* Darker background on hover */
-            color: #007bff; /* Change text color on hover */
+            background-color: #e0e0e0;
+            color: #007bff;
         }
 
+        /* About Section */
         .about-section {
             position: relative;
-            z-index: 10; /* Ensure content is on top */
-            margin: 50px auto; /* Center the section */
-            max-width: 600px; /* Max width for the section */
-            background: rgba(0, 0, 0, 0.7); /* Semi-transparent background for contrast */
-            border-radius: 10px; /* Rounded corners */
-            padding: 20px; /* Padding for inner content */
-            text-align: center; /* Center text within the section */
-        }
-
-        .about-info {
-            margin-bottom: 40px; /* Increased space below the info */
+            z-index: 10;
+            margin: 50px auto;
+            max-width: 700px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
         }
 
         .about-info h2 {
-            margin: 0 0 10px; /* Space below the heading */
-            font-size: 24px; /* Increased font size */
+            font-size: 28px;
+            margin-bottom: 15px;
         }
 
         .about-info p {
-            font-size: 18px; /* Increased paragraph font size */
-            margin: 5px 0; /* Space between paragraphs */
+            font-size: 18px;
+            margin: 10px 0;
         }
 
         .about-images {
-            display: flex; /* Flexbox for images */
-            justify-content: center; /* Center images horizontally */
-            z-index: 11; /* Ensure images are above everything else */
+            display: flex;
+            justify-content: space-around;
+            margin-top: 30px;
         }
 
         .about-images img {
-            width: 100px; /* Set larger fixed width for images */
-            height: auto; /* Maintain aspect ratio */
-            margin: 0 20px; /* Increased space between images */
+            width: 120px;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
         }
 
-        @media (max-width: 600px) {
+        /* Project Section */
+        .project-section {
+            background-color: rgba(86, 77, 114, 0.8); /* Set 80% opacity */
+            padding: 40px 20px;
+            border-radius: 15px;
+            margin-top: 50px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            z-index: 10;
+        }
+
+        .project-section h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        .project-section p {
+            font-size: 18px;
+            color: #ffffff;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .project-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .project-card {
+            width: 30%;
+            padding: 1px;
+            background-color: #333;
+            border-radius: 15px;
+            margin: 5px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .project-card img {
+            width: 100%;
+            border-radius: 12px;
+        }
+
+        .project-card:hover {
+            transform: scale(1.05);
+        }
+
+        .project-card h3 {
+            color: white;
+            font-size: 22px;
+            margin-top: 10px;
+            word-wrap: break-word; /* Allows long words to break */
+            word-break: break-word; /* Ensures text breaks when needed */
+        }
+
+        .project-card .button {
+            margin-top: 10px;
+            padding: 12px 20px;
+            background-color: #007bff;
+            color: white;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .project-card .button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
             .menu {
-                padding: 5px; /* Adjust padding for mobile */
+                padding: 10px;
             }
 
             .menu ul {
-                flex-direction: row; /* Keep items in a row */
-                overflow-x: auto; /* Allow horizontal scrolling if needed */
+                flex-direction: column;
             }
 
-            .menu li {
-                margin: 0 5px; /* Adjusted horizontal spacing */
+            .about-images {
+                flex-direction: column;
             }
 
-            .menu a {
-                padding: 8px; /* Smaller padding for mobile */
-                min-width: 80px; /* Minimum width for each item */
-                text-align: center; /* Center text on small screens */
+            .project-container {
+                flex-direction: column;
+            }
+
+            .project-card {
+                width: 100%;
             }
 
             .about-section {
-                padding: 15px; /* Adjust padding for smaller screens */
-                margin: 30px auto; /* Center with less margin */
-            }
-
-            .about-info h2 {
-                font-size: 20px; /* Adjusted font size for mobile */
-            }
-
-            .about-info p {
-                font-size: 16px; /* Adjusted paragraph font size for mobile */
-            }
-
-            .about-images img {
-                width: 80px; /* Adjusted image size for mobile */
+                margin: 20px;
+                padding: 20px;
             }
         }
     </style>
+
 </head>
 <body>
 
